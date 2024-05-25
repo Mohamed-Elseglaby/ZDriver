@@ -4,14 +4,18 @@
     box-sizing: border-box;
 }
 :root {
-    --main: #212429;
+    --main: #182948;
     --white:#fff;
     --dark-black:#000;
     --dark-green:#046504;
     --light-green:#37bf37;
-    --light-purple:#8262e5;
-    --sub-text:#aeaeae;
+    --light-blue:#243b64;
+    --sub-text:#df7a6d;
     --baby-blue:#146476;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --link-color: #bb86fc;
+    --footer-background: #1f1f1f;
 }
 @font-face {
     font-family: TechMono;
@@ -25,6 +29,9 @@ html {
     font-size: 16px;
     font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
     scroll-behavior: smooth;
+}
+.footer-section h3{
+    color: var(--sub-text);
 }
 .btn {
     display: inline-block;
@@ -53,18 +60,18 @@ p {
 #mainMenu {
     width: 100%;
     position: absolute;
-    background-color: var(--dark-black);
+    margin-bottom: 10px;
 }
 
 #mainMenu h2 {
     color: var(--white);
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 
 #mainMenu h2 span {
     color: var(--dark-green);
-    font-size: 1.5rem;
+    font-size: 2.2rem;
 }
 
 #mainMenu img {
@@ -74,7 +81,7 @@ p {
 
 #mainMenu div.container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 10px 0;
@@ -128,7 +135,6 @@ p {
 }
 #sec-1 .container{
     display: flex;
-    min-height: 100vh;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
@@ -146,18 +152,20 @@ p {
 }
 #sec-1 .container #left h1{
     font-size: 1.8rem;
-    text-shadow: 0px 8px 10px #811094;
+    text-shadow: 0px 5px 4px var(--sub-text);
     letter-spacing: 2px;
     margin-top: 20px;
+    color: #82d0ff;
     font-family: TechHead;
     text-transform:uppercase;
 }
 #sec-1 .container #right {
-    width:75%
+    width:75%;
+    margin-top: 30px;
 }
 #sec-1 .container #right img {
     max-width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 #sec-2{
     background: url(../images/sec-111.jpg);
@@ -185,7 +193,7 @@ p {
     color: var(--white);
     margin: 20px 0 20px 0;
     letter-spacing: 2px;
-    text-shadow: 0px 5px 2px var(--light-purple);
+    text-shadow: 0px 5px 2px var(--sub-text);
 }
 #sec-2 .container summary{
     display: flex;
@@ -195,7 +203,7 @@ p {
 }
 #sec-2 .container summary .left {
     width: 100%;
-    background-color: var(--light-purple);
+    background-color: var(--light-blue);
     padding: 50px;
     border-radius: 3px;
     box-shadow: 0px 2px 5px 0px var(--baby-blue);
@@ -248,7 +256,7 @@ p {
 #sec-3 .container .card .icn{
     width: 50px;
     height: 50px;
-    background-color: var(--light-purple);
+    background-color: var(--sub-text);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -267,13 +275,13 @@ p {
     position: absolute;
     right: -5px;
     bottom: -12px;
-    color: var(--light-purple);
+    color: var(--sub-text);
     opacity: 0.15;
 }
 #sec-3 .container .card .icn{
     width: 50px;
     height: 50px;
-    background-color: var(--light-purple);
+    background-color: var(--sub-text);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -282,12 +290,54 @@ p {
 }
 #sec-3 .container .card p{
     text-align: justify;
-    color: #c4c7cc;
+    color: var(--sub-text);
     z-index: 1;
 }
 #sec-3 .container .card h3 {
     color: var(--white);
     z-index: 1;
+}
+
+.footer {
+    text-align: center;
+    background-image: url(../images/sec-111.jpg);
+    background-position-y: 128%;
+    background-position-x: 31%;
+    background-size: cover;
+}
+
+.footer-container {
+    background-color: #061738;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons img {
+    width: 100%;
+    height: auto;
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -386,9 +436,9 @@ p {
     .container {
         width: 930px;
     }
-    #mainMenu{
+    /* #mainMenu{
         background-color: rgb(0, 0, 0, 0.4);
-    }
+    } */
     #sec-1 .container {
         flex-direction: row;
         justify-content: space-between;
@@ -434,25 +484,26 @@ p {
         margin: 30px 0 30px;
     }
     #sec-1 .container .btn {
-        width: 280px;
-        box-shadow: 0px 0px 20px 3px #811094;
+        width: 200px;
         font-size: 1.4rem;
         height: 50px;
         line-height: 50px;
     }
     #sec-1 .container .btn:hover {
-        width: 280px;
-        transition: ease-in-out 0.4s;
-        box-shadow: 10px 5px 6px 3px #811094;
+        width: 200px;
+        box-shadow: 0px 0px 20px 3px #811094;
         font-size: 1.4rem;
+        color:#811094 ;
         height: 50px;
         line-height: 50px;
     }
+
     #sec-2 .container h2{
         font-size: 3.5em;
     }
     #sec-2 .container summary .left h3 {
-        font-size: 2.7rem;
+        font-size: 2.3rem;
+            text-transform: uppercase;
     }
     #sec-2 .container summary {
         justify-content: space-around;
@@ -529,6 +580,19 @@ p {
     .container {
         width: 1140px;
     }
+        #mainMenu {
+            top: 30px;
+        }
+        #mainMenu h2 {
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 2.7rem;
+        }
+    
+        #mainMenu h2 span {
+            color: #ff0000;
+            font-size: 3.2rem;
+        }
     #sec-1 .container #right {
         width: 40%;
     }
@@ -538,7 +602,7 @@ p {
         height: 42vh;
     }
     #sec-1 .container #left h1{
-        font-size:4.5rem;
+        font-size:4.1rem;
         margin:0;
     }
     #sec-1 .container #left p {
@@ -546,22 +610,23 @@ p {
         margin: 0;
     }
     #sec-1 .container #left .btn {
-        width: 300px;
+        width: 200px;
 
     }
     #sec-2 .container summary {
-        height: 100vh;
+        height: 85vh;
         border-bottom: 3px solid var(--white);
     }
     #sec-2 .container h2 {
         font-size: 5em;
     }
     #sec-2 .container summary .left h3 {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     #sec-2 .container summary .left p{
-        font-size: 1.4rem;
-        line-height: 2.4rem;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        text-align: justify;
     }
     
 #sec-3 .container{
@@ -590,7 +655,7 @@ p {
 
 @media (min-width: 1400px) {
     .container {
-        width: 1340px;
+        width: 1200px;
     }
 
 }
